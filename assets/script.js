@@ -214,4 +214,4 @@ function checkAnswer(answer){
     }
 }
 
-startQuiz.addEventListener("click", startQuiz);
+startQuiz.addEventListener("click", beginQuiz);
