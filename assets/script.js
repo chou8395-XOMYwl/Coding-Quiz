@@ -16,7 +16,7 @@ var button1 = document.getElementById("1");
 var button2 = document.getElementById("2");
 var button3 = document.getElementById("3");
 var button4 = document.getElementById("4");
-var quixQuestions = [
+var quizQuestions = [
     {   question: "Loops can execute a block of code __________.",
         choice1: "Only Once",
         choice2: "Five Times",
@@ -58,5 +58,44 @@ var quixQuestions = [
         choice3: "variable spicySausage;",
         choice4: "var Spicy Sausage;", 
         correctAnswer: "1",
-},
+    },
+    {   question: "Choose the correct HTML element for the largest heading.",
+        choice1: "<h1>",
+        choice2: "<h2>",
+        choice3: "<h3>",
+        choice4: "<h4>", 
+        correctAnswer: "1",
+    },
+    {   question: "How do you call a function named myFunction?",
+        choice1: "call myFunction()",
+        choice2: "call function myFunction()",
+        choice3: "myFunction",
+        choice4: "myFunction()", 
+        correctAnswer: "4",
+    },
+    {   question: "Which html element is the most specific?",
+        choice1: "class",
+        choice2: "id",
+        choice3: "div",
+        choice4: "header", 
+        correctAnswer: "2",
+    },
+    {   question: "How do you generate a random number between 0 & 1 using JS?",
+        choice1: "Math.0.1()",
+        choice2: "Math.random",
+        choice3: "Math.decimal()",
+        choice4: "Math.random()", 
+        correctAnswer: "4",
+        },
 ]
+
+var finalQuestion = quizQuestions.length;
+var currentQuestion = 0;
+var timerLeft = 60;
+var timerInterval;
+var score = 0;
+var correct;
+
+function generateQuizQuestions(){
+    
+}
