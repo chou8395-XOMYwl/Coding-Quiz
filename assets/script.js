@@ -189,5 +189,29 @@ function clearScore(){
 function retakeQuiz(){
     highScoreContainer.style.display = "none";
     quizOver.style.display = "none";
-    startQuiz
+    landingPage.style.display = "flex";
+    timerLeft = 60;
+    score = 0;
+    currentQuestionArray = 0;
 }
+
+function checkAnswer(answer){
+    correct === quizQuestions[currentQuestionArray].correctAnswer;
+
+    if (answer === correct && currentQuestionArray !== finalQuestion) {
+        score++;
+        alert("Correct");
+        currentQuestionArray++;
+        generateQuizQuestions();
+    }
+    else if (answer !== correct && currentQuestionArray !== finalQuestion){
+        alert("Incorrect");
+        currentQuestionArray++;
+        generateQuizQuestions();
+    }
+    else{
+        showScore();
+    }
+}
+
+startQuiz.addEventListener("click", startQuiz);
