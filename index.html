@@ -1,20 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Required Meta Tags -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
-    <!-- Local CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/style.css">
-
-    <!-- Page Title -->
-    <title>Javascript Code Quiz</title>
+    <title>Coding Quiz</title>
 </head>
+
+<body>
+    <div class="container">
+        <div id="landingPage">
+            <h2>Coding Quiz!</h2>
+                <h3>Test your coding knowledge with this coding quiz! Answer all questions within the time limit. Incorrect answers will penalize you by subtracting time from the time limit.</h3>
+            <button id="startQuiz">Start Quiz</button>
+            <button id="highScoreStart" onclick="showHighscore()">View High Scores</button>
+        </div>
+        <div id="quiz">
+            <div id="timerCountdown">Time: </div>
+            <div id="questions"><p>questions</p></div>
+                <button id="1" onclick="checkAnswer('1')">1</button>
+                <button id="2" onclick="checkAnswer('2')">2</button>
+                <button id="3" onclick="checkAnswer('3')">3</button>
+                <button id="4" onclick="checkAnswer('4')">4</button>
+            <div id="results"></div>
+        </div>
+        <div id="quizOver">
+            <div id="endScore"></div>
+            <input type="text" size="50" placeholder="Enter Initials" name="initials" id="initials"/>
+            <button id="submitScore">Submit Score</button>
+        </div>
+        <div id="highScoreContainer">
+        <div id="highScorePage">
+            <div id="highScoreHeader">
+                <h3>Initials</h3>
+                <h3>High Score</h3>
+            </div>
+
+        <div id="highScoreInitials"></div>
+        <div id="highScore"></div>
+        </div>
+        <div id="endBtns">
+            <button id="playAgain" onclick="redoQuiz()">Play Again</button>
+            <button id="resetScores" onclick="resetScore()">Reset Scores</button>
+        </div>
+        </div>
+    </div>
+    <script src="./assets/script.js"></script>
+</body>
 
 </html>
