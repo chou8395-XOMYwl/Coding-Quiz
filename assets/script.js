@@ -90,12 +90,21 @@ var quizQuestions = [
 ]
 
 var finalQuestion = quizQuestions.length;
-var currentQuestion = 0;
+var currentQuestionArray = 0;
 var timerLeft = 60;
 var timerInterval;
 var score = 0;
 var correct;
 
 function generateQuizQuestions(){
-    
-}
+    quizOver.style.display = "none";
+    if (currentQuestion === finalQuestion) {
+        return showScore();
+    }
+    var currentQuestion = quizQuestions[currentQuestionArray];
+    questions.innerHTML = "<p>" + currentQuestion.question + "</p>";
+    button1.innerHTML = currentQuestion.choice1;
+    button2.innerHTML = currentQuestion.choice2;
+    button3.innerHTML = currentQuestion.choice3;
+    button4.innerHTML = currentQuestion.choice4;
+};
