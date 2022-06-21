@@ -5,6 +5,7 @@ var quizOver = document.getElementById("quizOver");
 var questions = document.getElementById("questions");
 var timer = document.getElementById("timerCountdown");
 var startQuiz = document.getElementById("startQuiz");
+var landingPage = document.getElementById("landingPage");
 var highScoreContainer = document.getElementById("highScoreContainer");
 var highScorePage = document.getElementById("highScorePage");
 var highScoreInput = document.getElementById("initials");
@@ -108,3 +109,85 @@ function generateQuizQuestions(){
     button3.innerHTML = currentQuestion.choice3;
     button4.innerHTML = currentQuestion.choice4;
 };
+
+function beginQuiz(){
+    quizOver.style.display = "none";
+    landingPage.style.display = "none";
+    generateQuizQuestions();
+
+    timerInterval = setInterval(function() {
+        timerLeft--;
+        timer.textContent = "Time left: " + timerLeft;
+
+        if (timerLeft === 0) {
+            clearInterval(timerInterval);
+            showScore();
+        }
+    }, 1000);
+    mainQuiz.style.display = "block";
+}
+
+function showScore(){
+    mainQuiz.style.display = "none";
+    quizOver.style.display = "flex";
+    clearInterval(timerInterval);
+    highScoreInput.value === "";
+    finalScore.innerHTML = "You got " + score + " out of " + quizQuestions.length + " correct!";
+}
+
+submitScore.addEventListener("click", function highScore(){
+    if (highScoreInput.value ===""){
+        alert("Initials cannot be blank");
+        return false;
+    }
+    else {
+        var savedHighScores = JSON.parse(localStorage.getItem("savedHighScores")) || [];
+        var currentUser = highScoreInput.value.trim();
+        var currentHighScore = {
+            name : currentUser,
+            score : score
+        };
+        quizOver.style.display = "none";
+        highScoreContainer.style.display = "flex";
+        highScore.style.display = "block";
+        endBtns.style.display = "flex";
+        savedHighScores.push(currentHighScore);
+        localStorage.setItem("savedHighScores", JSON.stringify(savedHighScores));
+        generateHighScores();
+    }
+});
+
+function generateHighScores(){
+    highScoreInitials.innerHTML = "";
+    highScore.innerHTML = "";
+    var highScoresScore = JSON.parse(localStorage.getItem("savedHighScores")) || [];
+    for (i=0; i<highScoresScore.length; i++){
+        var newName = document.createElement("li");
+        var newScore = document.createElement("li");
+        newName.textContent = highScore[i].name;
+        newScore.textContent = highScore[i].score;
+        highScoreInitials.appendChild(newName);
+        highScore.appendChild(newScore);
+    }
+}
+
+function showHighScore () {
+    landingPage.style.display = "none";
+    quizOver.style.display = "none";
+    highScoreContainer.style.display = "flex";
+    highScorePage.style.display = "block";
+    endBtns.style.display = "flex";
+    generateHighScores();
+}
+
+function clearScore(){
+    window.localStorage.clear();
+    highScoreInitials.textContent = "";
+    highScore.textContent = "";
+}
+
+function retakeQuiz(){
+    highScoreContainer.style.display = "none";
+    quizOver.style.display = "none";
+    startQuiz
+}
