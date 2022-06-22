@@ -223,7 +223,7 @@ function checkAnswer(answer){
         //display in the results div that the answer is correct.
     }else if (answer !== correct && currentQuestionIndex !== finalQuestionIndex){
         alert("That Is Incorrect.")
-        timeLeft = timeLeft - 10;
+        timeLeft = timeLeft - 5;
         quizTimer.textContent = "Time left: " + timeLeft;
         currentQuestionIndex++;
         generateQuizQuestion();
