@@ -58,14 +58,14 @@ var quizQuestions = [
         choiceA: "vari spicySausage;",
         choiceB: "v spicySausage;",
         choiceC: "variable spicySausage;",
-        choiceD: "var Spicy Sausage;", 
-        correctAnswer: "a"
+        choiceD: "var SpicySausage;", 
+        correctAnswer: "d"
     },
-    {   question: "Choose the correct HTML element for the largest heading.",
-        choiceA: "<h1>",
-        choiceB: "<h2>",
-        choiceC: "<h3>",
-        choiceD: "<h4>", 
+    {   question: "Which event occurs when the user clicks on an HTML element?",
+        choiceA: "onclick",
+        choiceB: "onmouseclick",
+        choiceC: "hover",
+        choiceD: "onhover", 
         correctAnswer: "a"
     },
     {   question: "How do you call a function named myFunction?",
