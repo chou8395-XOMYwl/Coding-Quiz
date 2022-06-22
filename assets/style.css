@@ -1,10 +1,10 @@
 :root{
-    background-color: rgb(224, 233, 253);
+    background-color: rgb(0, 217, 255);
     }
     
     li{
         padding-bottom: 3px;
-        color: white;
+        color: rgb(255, 0, 0);
         text-shadow: 1.5px 1px 3px black;
         list-style-type: none;
     }
@@ -38,9 +38,9 @@
       button {
         display: inline-block;
         font-family: sans-serif;
-        background-color: #5e6df1;
+        background-color: #ff00ae;
         border-radius: 10px;
-        border: 3px double #cccccc;
+        border: 3px double #00ff04;
         color: #eeeeee;
         text-align: center;
         font-size: 15px;
@@ -50,7 +50,7 @@
       }
     
       button:hover{
-          box-shadow: 4px 3px 6px #4450bd;
+          box-shadow: 4px 3px 6px #ff00dd;
       }
     
     #startpage{
@@ -61,8 +61,8 @@
     
     #timer{
         font-family: sans-serif;
-        background-color: #5a69f0;
-        color: #eeeeee;
+        background-color: #00ff0d;
+        color: #000000;
         font-size: x-large;
         text-shadow: .5px .5px black;
         text-align: center;
@@ -102,8 +102,8 @@
         justify-content: space-around;
         border-bottom-style: outset;
         margin-bottom: .5rem;
-        background-color: #5e6df1;
-        color: #eeeeee;
+        background-color: #00ff11;
+        color: #dc0071;
         font-family: sans-serif;
     }
     #highscoreContainer{
